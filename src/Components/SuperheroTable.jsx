@@ -1,33 +1,36 @@
 import React from "react";
 
+
 const SuperheroTable = (props) => {
     return (
-        <ul>
+        <React.Fragment>
                <table>     
                                        
-               <tbody> 
+               
             {props.superhero.map((superhero) => {
                 return (
-                    <div>                        
-                
+                                            
+                <tbody>
                         <tr>
+                        <th>ID</th>    
                         <th>Name</th>
                         <th>Primary Ability</th>
                         <th>Secondary Abililty</th>
-                        </tr>    
-                    <tr key={superhero.superheroId}>
+                        </tr>
+                        <tr>    
+                        <td key={superhero.superheroId}></td>
                         <td>{superhero.name}</td>
                         <td>{superhero.primaryAbility}</td>
-                        <td>{superhero.secondarAbility}</td>
+                        <td>{superhero.secondarAbility}</td>                       
+                        </tr>
                         <hr />
-                    </tr>
-              
-                    </div>
+                </tbody>
+                    
                 );
             })}
-                  </tbody>
+                  
             </table>
-        </ul>
+        </React.Fragment>
     );
 }
 

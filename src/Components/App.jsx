@@ -38,13 +38,16 @@ AlertUserButton(){
    return alert('devCodeCamp') 
    }
 
-addNewSuperhero(superhero){
-   console.log(superhero)
-  this.state.superheroes.push(superhero);
+addNewSuperhero = (superhero)=> {   
+  console.log(superhero)
+
   console.log(this.state.superheroes)
    this.setState({
-      rerender: !this.state.rerender
-   })
+      superheroes: [...this.state.superheroes,superhero],
+      name:"",
+      primaryAbility:"",
+      secondarAbility:""
+   });
 }
 
 render() {
@@ -56,7 +59,7 @@ render() {
           <h1>Exerise 4</h1>
           <SuperheroTable superhero={this.state.superheroes}/> 
           <h1>Part 2, Exercise 1</h1>
-          <CreateSuperhero newSuperhero={this.addNewSuperhero.bind(this)}/>
+          <CreateSuperhero addNewSuperhero={this.addNewSuperhero}/>
           <h1>Part2, Exercise 2</h1>
           <Jokes />      
        </div>
